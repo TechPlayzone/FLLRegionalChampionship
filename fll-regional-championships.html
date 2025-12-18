@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIRST LEGO League Florida Regional Championships 2026 | UNEARTHED</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #800020;
+            --tan: #D2B48C;
+            --cream: #F5F5DC;
+            --dark-burgundy: #5C0016;
+            --light-tan: #E8D4B8;
+            --white: #FFFFFF;
+            --dark: #2C2C2C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--dark);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background: var(--tan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(0,0,0,0.03) 50px, rgba(0,0,0,0.03) 52px);
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        .logo-section {
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--dark-burgundy);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .event-selector {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 4px solid var(--burgundy);
+            min-width: 280px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(128, 0, 32, 0.3);
+            background: var(--burgundy);
+            color: white;
+        }
+
+        .event-box:hover .event-name,
+        .event-box:hover .event-date,
+        .event-box:hover .event-teams {
+            color: white;
+        }
+
+        .event-box:hover .event-city {
+            color: white;
+        }
+
+        .event-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--burgundy);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-date {
+            font-size: 1.2rem;
+            color: var(--dark-burgundy);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-teams {
+            font-size: 1.1rem;
+            color: var(--burgundy);
+            font-weight: 700;
+        }
+
+        .event-city {
+            font-size: 1rem;
+            color: var(--dark-burgundy);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-container {
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--burgundy);
+            color: white;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(128, 0, 32, 0.3);
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-burgundy);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(128, 0, 32, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: var(--tan);
+            color: var(--dark-burgundy);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--dark-burgundy);
+            color: white;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--burgundy);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--tan);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--tan);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--tan);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .section {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--burgundy);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--burgundy);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card p, .info-card ul {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .info-card ul {
+            list-style-position: inside;
+            margin-top: 1rem;
+        }
+
+        .info-card li {
+            margin: 0.5rem 0;
+        }
+
+        .event-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 4px solid var(--burgundy);
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(128, 0, 32, 0.3);
+        }
+
+        .event-header {
+            background: var(--burgundy);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .event-card-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card-date {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--tan);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card-teams {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            background: var(--dark-burgundy);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin-top: 0.5rem;
+        }
+
+        .event-body {
+            padding: 2rem;
+        }
+
+        .event-detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .event-detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .event-detail-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .event-detail-value {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: var(--burgundy);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 30px rgba(128, 0, 32, 0.3);
+            border: 4px solid var(--dark-burgundy);
+        }
+
+        .highlight-box h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box ul {
+            list-style-position: inside;
+            line-height: 1.8;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .image-section img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .sponsors-section {
+            background: var(--burgundy);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .sponsor-title {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            font-size: 2rem;
+            color: var(--tan);
+            margin-bottom: 2rem;
+        }
+
+        .sponsor-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sponsor-logo img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: var(--dark-burgundy);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-contact {
+            margin: 1.5rem 0;
+        }
+
+        .footer-contact a {
+            color: var(--tan);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
+            .event-selector {
+                flex-direction: column;
+            }
+
+            .event-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-section">
+                <img src="FIRST-AGE-image.png" alt="FIRST AGE Logo" style="max-width: 350px; width: 100%; height: auto; margin-bottom: 1.5rem;">
+                <h2><i>FIRST</i>® LEGO® League Florida Regional Championships 2026</h2>
+                <p class="hero-tagline">Florida Central & West Region</p>
+            </div>
+            
+            <div class="event-selector">
+                <div class="event-box">
+                    <div class="event-name">Walker Middle Magnet School</div>
+                    <div class="event-city" style="font-size: 1rem; margin-bottom: 0.5rem;">Odessa, Florida</div>
+                    <div class="event-date">January 17, 2026</div>
+                    <div class="event-teams">42 Teams</div>
+                </div>
+                <div class="event-box">
+                    <div class="event-name">Spruce Creek High School</div>
+                    <div class="event-city" style="font-size: 1rem; margin-bottom: 0.5rem;">Port Orange, Florida</div>
+                    <div class="event-date">January 24, 2026</div>
+                    <div class="event-teams">42 Teams</div>
+                </div>
+            </div>
+            
+            <div class="cta-container">
+                <a href="#registration" class="cta-button">Register Now</a>
+                <a href="#events" class="cta-button secondary">View Event Details</a>
+            </div>
+        </div>
+    </section>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">FLL Regional 2026</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events & Locations</a></li>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#checkin">Check-In</a></li>
+                <li><a href="#pit">Pit Area</a></li>
+                <li><a href="#judging">Judging</a></li>
+                <li><a href="#teams">Teams</a></li>
+                <li><a href="#volunteers">Volunteers</a></li>
+                <li><a href="#registration">Registration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="section">
+        <div class="section-header">
+            <h2 class="section-title">About the Championships</h2>
+            <p class="section-subtitle">
+                The Florida Central & West Region proudly hosts two regional championship tournaments for <i>FIRST</i>® LEGO® League Challenge teams. 
+                Join us for a day of innovation, competition, and celebration!
+            </p>
+        </div>
+
+        <div class="image-section">
+            <img src="cart2.png" alt="LEGO Robot">
+            <img src="UNEARTHED_WEBP_file.webp" alt="UNEARTHED Season Logo">
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>What is FLL?</h3>
+                <p><i>FIRST</i>® LEGO® League introduces STEM to children ages 9-14 through hands-on learning. Participants gain real-world problem-solving experiences through a guided, global robotics program using LEGO® technology.</p>
+            </div>
+            <div class="info-card">
+                <h3>UNEARTHED Theme</h3>
+                <p>This year's challenge is UNEARTHED! Teams explore how we use Earth's resources and develop innovative solutions to preserve our planet for future generations.</p>
+            </div>
+            <div class="info-card">
+                <h3>Advancement to State</h3>
+                <p><strong>11 teams from each regional championship</strong> will advance to the Florida State Championship.</p>
+                <p style="margin-top: 1rem;">Compete for your chance to represent your region at the state level!</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 2rem;">
+            <h4>Path to State Championship</h4>
+            <p style="margin-top: 1rem;">From each regional championship tournament, <strong>11 teams will advance</strong> to compete at the FLL Florida State Championship in February 2026. Bring your best performance to earn your spot!</p>
+        </div>
+    </section>
+
+    <section id="events" class="section" style="background: white;">
+        <div class="section-header">
+            <h2 class="section-title">Championship Events & Locations</h2>
+            <p class="section-subtitle">Two separate championship tournaments - choose the event that works best for your team</p>
+        </div>
+
+        <div class="event-cards">
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-card-name">Walker Middle Magnet School</div>
+                    <div style="font-size: 1rem; color: white; margin-bottom: 0.5rem;">Odessa, Florida</div>
+                    <div class="event-card-date">January 17, 2026</div>
+                    <div class="event-card-teams">42 Teams</div>
+                </div>
+                <div class="event-body">
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Program:</span>
+                        <span class="event-detail-value"><i>FIRST</i> LEGO League Challenge</span>
+                    </div>
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Type:</span>
+                        <span class="event-detail-value">Championship Tournament</span>
+                    </div>
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Teams:</span>
+                        <span class="event-detail-value">42 Teams</span>
+                    </div>
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Setup Date:</span>
+                        <span class="event-detail-value">January 16, 2026</span>
+                    </div>
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Event Date:</span>
+                        <span class="event-detail-value">January 17, 2026</span>
+                    </div>
+                    <div class="event-detail-row" style="background: rgba(128, 0, 32, 0.05); margin: 0.5rem -2rem; padding: 1rem 2rem;">
+                        <span class="event-detail-label" style="color: var(--burgundy); font-weight: 700;">Advancing to State:</span>
+                        <span class="event-detail-value" style="color: var(--burgundy); font-size: 1.2rem;">11 Teams</span>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #eee;">
+                        <a href="https://walker.mysdhc.org/" target="_blank" style="color: var(--burgundy); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--burgundy); display: inline-block;">Visit Walker Middle Magnet School Website →</a>
+                        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Venue details and directions will be provided to registered teams.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-card-name">Spruce Creek High School</div>
+                    <div style="font-size: 1rem; color: white; margin-bottom: 0.5rem;">Port Orange, Florida</div>
+                    <div class="event-card-date">January 24, 2026</div>
+                    <div class="event-card-teams">42 Teams</div>
+                </div>
+                <div class="event-body">
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Program:</span>
+                        <span class="event-detail-value"><i>FIRST</i> LEGO League Challenge</span>
+                    </div>
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Type:</span>
+                        <span class="event-detail-value">Championship Tournament</span>
+                    </div>
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Teams:</span>
+                        <span class="event-detail-value">42 Teams</span>
+                    </div>
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Setup Date:</span>
+                        <span class="event-detail-value">January 23, 2026</span>
+                    </div>
+                    <div class="event-detail-row">
+                        <span class="event-detail-label">Event Date:</span>
+                        <span class="event-detail-value">January 24, 2026</span>
+                    </div>
+                    <div class="event-detail-row" style="background: rgba(128, 0, 32, 0.05); margin: 0.5rem -2rem; padding: 1rem 2rem;">
+                        <span class="event-detail-label" style="color: var(--burgundy); font-weight: 700;">Advancing to State:</span>
+                        <span class="event-detail-value" style="color: var(--burgundy); font-size: 1.2rem;">11 Teams</span>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #eee;">
+                        <a href="https://www.vcsedu.org/sprucecreek" target="_blank" style="color: var(--burgundy); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--burgundy); display: inline-block;">Visit Spruce Creek High School Website →</a>
+                        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Venue details and directions will be provided to registered teams.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Parking</h3>
+                    <p>On-campus parking available for all attendees at both locations. Parking attendants will direct you to designated areas.</p>
+                    <p style="margin-top: 1rem; color: var(--burgundy); font-weight: 600;">Free parking for all participants</p>
+                </div>
+                <div class="info-card">
+                    <h3>Venue Access</h3>
+                    <p>Both venues are fully accessible. If you have specific accessibility needs, please contact us in advance so we can ensure appropriate accommodations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="food" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Food & Beverages</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Beverage Policy</h3>
+                <p>Students may bring refillable water bottles. Water bottle filling stations will be available at the venues.</p>
+            </div>
+            <div class="info-card">
+                <h3>Food Options</h3>
+                <p>Details about food availability and pre-ordering options will be provided closer to the event date.</p>
+            </div>
+            <div class="info-card">
+                <h3>Dietary Accommodations</h3>
+                <p>Please indicate any dietary restrictions during registration. We strive to accommodate all needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="checkin" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Team Check-In</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Check-In Process</h3>
+                <p>Check-in times will be provided to registered teams closer to the event date.</p>
+                <p style="margin-top: 1rem;">Only one coach needs to check in.</p>
+            </div>
+            <div class="info-card">
+                <h3>Required Documents</h3>
+                <ul>
+                    <li>Team Roster</li>
+                    <li>Team Photo</li>
+                    <li>Team Information Sheet</li>
+                    <li>Coach/Mentor Award Nomination (optional)</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>What You'll Receive</h3>
+                <ul>
+                    <li>2 Coach badges</li>
+                    <li>1 Queuer badge</li>
+                    <li>Team schedule</li>
+                    <li>Championship gift</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="pit" class="section" style="background: white;">
+        <div class="section-header">
+            <h2 class="section-title">Pit Area</h2>
+            <p class="section-subtitle">Your team's home base for the competition</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Pit Specifications</h3>
+                <p>Each team receives approximately 6ft x 6ft space with:</p>
+                <ul>
+                    <li>One 6ft table</li>
+                    <li>At least 2 chairs</li>
+                    <li>Electricity access</li>
+                    <li>Charging stations</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>What to Bring</h3>
+                <ul>
+                    <li>Robot and supplies</li>
+                    <li>Laptop and power cord</li>
+                    <li>USB download cable (no Bluetooth!)</li>
+                    <li>Robot transport container</li>
+                    <li>Judging props</li>
+                    <li>Copies of code</li>
+                    <li>Prototypes, sketches, evidence of Engineering Design Process</li>
+                    <li>Team display/banner (optional)</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Tailgate Decoration</h3>
+                <p>Create an inviting tailgate area to showcase your team identity and relax between events!</p>
+                <ul>
+                    <li>Team banners</li>
+                    <li>Display boards</li>
+                    <li>Project posters</li>
+                    <li>Team giveaways</li>
+                    <li>Outdoor tents</li>
+                    <li>Tables and chairs</li>
+                    <li>Ice coolers with non-alcoholic beverages and snacks</li>
+                    <li>Games, puzzles, balls, and books for downtime</li>
+                </ul>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--burgundy);">Make your tailgate memorable and fun!</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>Practice Tables Available</h4>
+            <ul>
+                <li>Sign up with Practice Table Coordinator</li>
+                <li>6-minute slots (two 2.5-minute runs)</li>
+                <li>Reset table for next team</li>
+                <li>Be gracious and help other teams!</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="judging" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Judging Sessions</h2>
+            <p class="section-subtitle">Each team spends 30 minutes with judges</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Innovation Project</h3>
+                <p><strong>7 minutes total</strong></p>
+                <ul>
+                    <li>2 minutes: Setup</li>
+                    <li>5 minutes: Presentation</li>
+                    <li>5 minutes: Q&A</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Robot Design</h3>
+                <p><strong>10 minutes total</strong></p>
+                <ul>
+                    <li>5 minutes: Presentation</li>
+                    <li>5 minutes: Q&A</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Must bring:</strong> Robot, attachments, and code</p>
+            </div>
+            <div class="info-card">
+                <h3>Core Values</h3>
+                <p>Judges evaluate team dynamics:</p>
+                <ul>
+                    <li>Communication</li>
+                    <li>Respect</li>
+                    <li>Collaboration</li>
+                    <li>Leadership</li>
+                    <li>Gracious Professionalism</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="robot-game" class="section" style="background: white;">
+        <div class="section-header">
+            <h2 class="section-title">Robot Game</h2>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Competition Format</h3>
+                <ul>
+                    <li>Practice Round (doesn't count)</li>
+                    <li>3 Official Rounds</li>
+                    <li>Your best score counts!</li>
+                    <li>Each match is 2.5 minutes</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Important Rules</h3>
+                <ul>
+                    <li>No remote controls</li>
+                    <li>Bluetooth must be DISABLED</li>
+                    <li>USB cable required</li>
+                    <li>Verify field setup before match</li>
+                    <li>Coaches must NEVER work on robot</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Scoring</h3>
+                <p>Your Robot Performance score is the <strong>highest score</strong> across your three official rounds.</p>
+                <p style="margin-top: 1rem; font-weight: 600; color: var(--burgundy);">The referee's ruling is final</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="volunteers" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Volunteer Requirements</h2>
+        </div>
+
+        <div class="highlight-box">
+            <h4>MANDATORY TEAM REQUIREMENT</h4>
+            <p style="margin-top: 1rem;">Every team must provide <strong>one adult volunteer (18+)</strong> to serve as the team's Queuer.</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Queuer Responsibilities</h3>
+                <ul>
+                    <li>Ensure team arrives 5 minutes early for judging</li>
+                    <li>Get team to competition area 5 minutes before matches</li>
+                    <li>Track multiple schedules</li>
+                    <li>Line up team in proper lane</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>How to Sign Up</h3>
+                <p>Register your volunteer on your FIRST Dashboard at <strong>www.firstinspires.org</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teams" class="section" style="background: white;">
+        <div class="section-header">
+            <h2 class="section-title">Registered Teams</h2>
+            <p class="section-subtitle">Teams competing at each regional championship</p>
+        </div>
+
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); border-radius: 15px; overflow: hidden;">
+                <thead>
+                    <tr style="background: var(--burgundy); color: white;">
+                        <th style="padding: 1.5rem; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 1.3rem; width: 50%; border-right: 2px solid var(--tan);">
+                            Walker Middle Magnet School<br>
+                            <span style="font-size: 0.9rem; color: var(--tan); font-family: 'Work Sans', sans-serif;">January 17, 2026</span>
+                        </th>
+                        <th style="padding: 1.5rem; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 1.3rem; width: 50%;">
+                            Spruce Creek High School<br>
+                            <span style="font-size: 0.9rem; color: var(--tan); font-family: 'Work Sans', sans-serif;">January 24, 2026</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 1rem; border-right: 2px solid #f0f0f0; vertical-align: top;">
+                            <ol style="margin: 0; padding-left: 1.5rem; line-height: 2;">
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                            </ol>
+                        </td>
+                        <td style="padding: 1rem; vertical-align: top;">
+                            <ol style="margin: 0; padding-left: 1.5rem; line-height: 2;">
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                                <li>Team Name</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="registration" class="section" style="background: var(--tan); color: var(--dark); padding: 3rem 2rem;">
+        <div class="section-header">
+            <h2 class="section-title" style="color: var(--burgundy);">Registration Information</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="highlight-box" style="background: var(--burgundy); color: white; border-color: var(--dark-burgundy);">
+                <h4>Registration Fee: $175 per Team</h4>
+                <p style="margin-top: 1rem;">Includes tournament entry, pit space, practice tables, and team gifts</p>
+                <p style="margin-top: 1rem; font-size: 1.1rem;"><strong>Choose your event: Walker Middle Magnet School (Odessa) or Spruce Creek High School (Port Orange)</strong></p>
+                <p style="margin-top: 1rem; padding-top: 1rem; border-top: 2px solid rgba(255, 255, 255, 0.3); font-size: 1.2rem; font-weight: 700;">🏆 11 teams from each regional advance to State Championship! 🏆</p>
+            </div>
+
+            <div class="cta-container">
+                <a href="#" class="cta-button">Complete Registration</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sponsors-section">
+        <h2 class="sponsor-title">Program Delivery Organization</h2>
+        <div class="sponsor-grid">
+            <div class="sponsor-logo">
+                <img src="FUNducation_FIRST_LEGO_League_horizontal_lockup.jpg" alt="FUNducation and FIRST LEGO League Florida Central & West">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3 style="font-family: 'Orbitron', sans-serif; color: var(--tan); margin-bottom: 1rem;">Contact Information</h3>
+            <div class="footer-contact">
+                <p>For questions about the Regional Championships, please contact:</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Florida Central & West Region</strong><br>
+                    Program Delivery Organization: FUNducation®
+                </p>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                <p style="margin: 0.5rem 0;">FLL Florida Regional Championships 2026 - UNEARTHED</p>
+                <p style="margin: 0.5rem 0;">Walker Middle Magnet School, Odessa: January 17, 2026 (42 Teams) | Spruce Creek High School, Port Orange: January 24, 2026 (42 Teams)</p>
+                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;"><i>FIRST</i>®, <i>FIRST</i>® LEGO® League, and the FIRST logo are registered trademarks of FIRST</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
